@@ -1,0 +1,105 @@
+SI_2022_lab1_162004
+STEP 04: 	git clone https://github.com/VanjaPetrushevski/SI_2022_lab1_162004.git (Pravime kopija od remote repo na lokalen pc)
+STEP 05: 	nano shopping_list.txt -> git add shopping_list.txt -> git commit -m "Add 5 items to the shopping list"  (Kreirame tekst fajl i go komituvame)
+STEP 06: 	nano shopping_list.txt -> git add shopping_list.txt -> git commit -m  "Add quantities to the items" (Editirame tekst fajl i go komituvame)
+STEP 07: 	git checkout -b branch1 -> git checkout master -> git checkout -b branch2  (Kreirame 2 granki)
+STEP 08:	
+					$ git log
+					commit b8059598808e061bea75e9680e36f2492d24eefc (HEAD -> master, branch2, branch1)
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:44:38 2022 +0200
+
+						Add quanities to the items
+
+					commit 35a8c818604c7fa37090f51d3f218d839839cb0f
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:43:06 2022 +0200
+
+						Add 5 items to the shopping list
+
+					commit 1739b0af035ef8a67e6564d7c42a2a502f73abde (origin/master, origin/HEAD)
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:42 2022 +0200
+
+						Update README.md
+
+					commit be3b927be1af2b8a209ede4371dbb9af3cbd8770
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:21 2022 +0200
+
+						Initial commit
+
+STEP 09:	git push origin --all  (Pravime sync so remote repo)
+STEP 10: 	git checkout branch1 (Se vrakjame na branch 1)
+STEP 11: 	nano shopping_list.txt -> git add shopping_list.txt -> git commit -m  "Change quantity of item #5" (Editirame tekst fajl i go komituvame)
+STEP 12: 	git checkout master (Se vrakjame na master grankata)
+STEP 13:	nano shopping_list.txt -> git add shopping_list.txt -> git commit -m  "Change quantity of item #2" (Editirame tekst fajl i go komituvame)
+STEP 14:	git push origin --all  (Pravime sync so remote repo)
+STEP 15:	git checkout branch2 (Se vrakjame na vtorata granka)
+STEP 16:	nano shopping_list.txt -> git add shopping_list.txt -> git commit -m  "Modify item #4" (Editirame tekst fajl i go komituvame)
+STEP 17:
+
+					commit f5fa3610478c2657d856137773bcd2157826f79d (HEAD -> branch2)
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:55:01 2022 +0200
+
+						Modify item #4
+
+					commit b8059598808e061bea75e9680e36f2492d24eefc (origin/branch2)
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:44:38 2022 +0200
+
+						Add quanities to the items
+
+					commit 35a8c818604c7fa37090f51d3f218d839839cb0f
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:43:06 2022 +0200
+
+						Add 5 items to the shopping list
+
+					commit 1739b0af035ef8a67e6564d7c42a2a502f73abde
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:42 2022 +0200
+
+						Update README.md
+
+					commit be3b927be1af2b8a209ede4371dbb9af3cbd8770
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:21 2022 +0200
+
+						Initial commit
+
+STEP 18:	git rebase -i head~2 -> edit na fajlot sto izleguva vo nov prozorec -> nano shopping_list (dodavame 6 stavka) -> git commit --amend -m "Modify item #4 and add item #6" 
+STEP 19:  
+					commit 6c0cdfe6e082fb864c83f172d3d2ec5706e3472b (HEAD)
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:55:01 2022 +0200
+
+						Modify item #4 and add item #6
+
+					commit b8059598808e061bea75e9680e36f2492d24eefc (origin/branch2)
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:44:38 2022 +0200
+
+						Add quanities to the items
+
+					commit 35a8c818604c7fa37090f51d3f218d839839cb0f
+					Author: VanjaPetrushevski <vanjo.petrusevski@gmail.com>
+					Date:   Tue Apr 5 16:43:06 2022 +0200
+
+						Add 5 items to the shopping list
+
+					commit 1739b0af035ef8a67e6564d7c42a2a502f73abde
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:42 2022 +0200
+
+						Update README.md
+
+					commit be3b927be1af2b8a209ede4371dbb9af3cbd8770
+					Author: VanjaPetrushevski <102427437+VanjaPetrushevski@users.noreply.github.com>
+					Date:   Tue Apr 5 16:39:21 2022 +0200
+
+						Initial commit
+
+STEP 20:	git checkout master -> git merge branch1 (Pravime merge na branch 1 so master)
+STEP 21:   git merge branch2 (Pravime merge na branch 2 so master)
