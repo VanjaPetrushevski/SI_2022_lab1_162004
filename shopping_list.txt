@@ -1,5 +1,10 @@
 Pepsi x2
 Fanta x1
 CocaCola x2
+<<<<<<< HEAD
 Nescafe x2
 Milk x5
+=======
+Donkafe x2
+Milk x2
+>>>>>>> branch2
